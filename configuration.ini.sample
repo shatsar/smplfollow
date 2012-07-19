@@ -1,0 +1,7 @@
+consumer.key = ""
+consumer.secret=''
+access.token=''
+access.tokenSecret=''
+follow_target=
+
+database=db.sqlite
