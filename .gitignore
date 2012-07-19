@@ -1,4 +1,5 @@
 *.ini
+*.sqlite
 *.sh
 .project
 .loadpath
