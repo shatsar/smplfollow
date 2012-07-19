@@ -1,10 +1,10 @@
 def load_configuration(configfile)
-  $consumerKey = configfile.get_value("consumer.key");
-  $consumerSecret= configfile.get_value("consumer.secret");
-  $accessToken= configfile.get_value("access.token");
-  $accessTokenSecret=configfile.get_value("access.tokenSecret");
-  $db_name = configfile.get_value("database");
-  $follow_target = configfile.get_value("follow_target");
+  $consumerKey = configfile["consumer.key"]
+  $consumerSecret= configfile["consumer.secret"]
+  $accessToken= configfile["access.token"]
+  $accessTokenSecret=configfile["access.tokenSecret"]
+  $db_name = configfile["database"]
+  $follow_target = configfile["follow_target"]
   $unfollow_limit=199
 end
 
