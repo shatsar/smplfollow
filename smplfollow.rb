@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'date'
+gem 'twitter', "=2.5.0"
 require 'twitter'
 require 'include/db.rb'
 require 'include/db-utils.rb'
