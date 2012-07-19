@@ -6,7 +6,7 @@ It's a simple bot I wrote a couple of years ago to play with Twitter social inte
 Basic concepts:
 
 * follow every follower you have
-* to 2 days after your follow, unfollow everyone that is not following you back
+* 2 days after your follow, unfollow everyone that is not following you back
 
 It is really simple to configure and use:
 provide a configuration file (-c <path_to_configuration_file> )
