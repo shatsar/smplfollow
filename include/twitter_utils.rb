@@ -51,7 +51,7 @@ def unfollow_unfollowers(client)
           break
         end
       rescue => e
-        puts e
+        $log.error e
       end
     end
   end   
@@ -69,7 +69,7 @@ def follow_base(client, conditions)
           follow = Follow.create(:user_id => u.user_id, :follow_date => Date.today)
           new_followed = new_followed + 1
         rescue => e
-          puts e
+          $log.error e
         end
     end
   end

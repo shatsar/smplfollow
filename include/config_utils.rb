@@ -8,12 +8,12 @@ def load_configuration(configfile)
   $unfollow_limit=199
 end
 
-
 def load_parameters(args)
   $unfollow=true
   $follow=true
   $follow_third=true
-  
+  $development_mode=false
+
   # parsing parameters
   if args.length > 0  then
     opts = OptionParser.new
@@ -26,6 +26,9 @@ def load_parameters(args)
     opts.on("--no-follow-third", "disable follow of third party followers") do |d|
       $follow_third = false
     end
+    opts.on("-d", "--development-mode", "enable development mode (verbose log)") do |d|
+      $development_mode = true
+    end
     opts.on("-c [CONFIGFILE]", "set configuration file") do |c|
       $configfile = c
     end
@@ -33,6 +36,13 @@ def load_parameters(args)
       puts opts
       exit
     end
-    opts.parse!(args)
+  opts.parse!(args)
   end
+end
+
+def init_logger() 
+  configurator = YamlConfigurator    # handy shorthand
+  configurator.load_yaml_file 'log4r_configuration.yaml'
+  logger_name = $development_mode ? 'development' : 'production'
+  $log = Logger[logger_name]
 end

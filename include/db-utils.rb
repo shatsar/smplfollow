@@ -8,5 +8,5 @@ def load_in_db(list, type)
     num = num + 1
   end
   end_time = Time.now
-  puts "#{num} #{type} loaded in #{(end_time - beginning_time)} seconds"
+  $log.debug "#{num} #{type} loaded in #{(end_time - beginning_time)} seconds"
 end
